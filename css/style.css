@@ -1,0 +1,275 @@
+:root {
+    --Mobile-width: 375px;
+    --Desktop-width: 1440px;
+    /*Primary colors*/
+    --soft-orange: hsl(35, 77%, 62%);
+    --soft-red: hsl(5, 85%, 63%);
+    /*Neutral colors*/
+    --off-white: hsl(36, 100%, 99%);
+    --grayish-blue: hsl(233, 8%, 79%);
+    --dark-grayish-blue: hsl(236, 13%, 42%);
+    --very-dark-blue: hsl(240, 100%, 5%);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+
+}
+
+body p {
+    font-size: 15px;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 70%;
+    margin: 0 auto;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0 1.8rem;
+}
+
+header .logo-container img {
+    width: 30px;
+}
+
+
+header ul {
+    display: flex;
+}
+
+header ul li {
+    cursor: pointer;
+    font-size: 14px;
+    color: var(--dark-grayish-blue);
+    transition: 0.4s;
+}
+
+header ul li:hover {
+    color: var(--soft-red);
+}
+
+header ul li:not(:last-child) {
+    margin-right: 1rem;
+}
+
+header nav .app-icon {
+    display: none;
+}
+
+nav {
+    position: relative;
+}
+.active{
+    position: relative;
+}
+.active::after{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    background-color:orange;
+    left: 0;
+    top: 30px;
+}
+
+
+
+@media (max-width:767px) {
+    header nav .app-icon {
+        display: block;
+        cursor: pointer;
+    }
+
+
+    header nav ul {
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        width: 150px;
+        background-color: #fff;
+        position: absolute;
+        transform: translatex(100px);
+        translate: 0.9s;
+      
+   
+        padding: 3rem 0 0 1rem;
+      
+       
+        
+    }
+
+    /*header nav .app-icon:hover+ul {
+        right: 0;
+    }*/
+    .showmenu{
+        transform: translatex(-80px);
+     
+      
+    }
+
+    header nav ul li {
+        margin-bottom: 1rem;
+    }
+
+
+}
+
+.home {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    column-gap: 1rem;
+}
+
+@media (max-width:767px) {
+    .home {
+        grid-template-columns: 1fr;
+        row-gap: 1rem;
+    }
+
+}
+
+.home .left .img-container img {
+    width: 100%;
+    max-width: 100%;
+}
+
+.left .content {
+    margin-top: 0.5rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+@media (max-width:767px) {
+    .left .content {
+        grid-template-columns: 1fr;
+        row-gap: 1rem
+    }
+
+}
+
+.left .content h1 {
+    font-size: 2rem;
+}
+
+.left .content .inner-content p {
+    font-size: 0.7rem;
+    color: var(--dark-grayish-blue);
+    line-height: 1.5;
+}
+
+.left .content .inner-content button {
+    background-color: var(--soft-red);
+    color: var(--off-white);
+    padding: 0.5rem 1.5rem;
+    border: none;
+    margin-top: 1rem;
+    border-radius: 0.1rem;
+    font-size: 0.8rem;
+    transition: 0.4s;
+}
+
+
+.left .content .inner-content button:hover {
+    background-color: var(--very-dark-blue);
+    color: var(--off-white);
+
+}
+
+.right {
+    background-color: var(--very-dark-blue);
+    padding: 0.5rem 1rem;
+}
+
+
+.right h3 {
+    color: var(--soft-orange);
+}
+
+.right .item {
+    margin: 0.5rem 0;
+}
+
+.right .item p {
+    margin-bottom: 0.5rem;
+}
+
+.right .item p:nth-child(1) {
+    color: var(--off-white);
+    font-size: 0.7rem;
+    transition: 0.4s;
+}
+
+.right .item p:nth-child(1):hover {
+    color: var(--soft-orange);
+}
+
+.right .item p:nth-child(2) {
+    color: var(--dark-grayish-blue);
+    font-size: 0.6rem;
+
+}
+
+.services {
+    margin-top: 1.6rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 1rem;
+}
+
+@media (max-width:767px) {
+    .services {
+        grid-template-columns: 1fr;
+        row-gap: 1rem;
+    }
+
+}
+
+.services .content {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    column-gap: 0.6rem;
+}
+
+.services .content .img-container img {
+    max-height: 100%;
+    height: 100%;
+    width: 100%;
+    max-width: 100%;
+}
+
+.services .content .inner-content h5 {
+    font-size: .8rem;
+    color: var(--dark-grayish-blue);
+}
+
+.services .content .inner-content p {
+    font-size: .7rem;
+    transition: 0.4s;
+}
+
+.services .content .inner-content p:nth-child(2):hover {
+    color: var(--soft-red);
+}
+
+.services .content .inner-content p:nth-child(3) {
+    font-size: .6rem;
+    color: var(--dark-grayish-blue);
+}
